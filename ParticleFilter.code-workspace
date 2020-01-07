@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "/Users/subir/iPhoringGithub/ParticleFilter"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"random": "cpp",
+			"__functional_03": "cpp"
+		}
+	}
+}

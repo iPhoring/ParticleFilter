@@ -3,7 +3,7 @@
  * Some helper functions for the 2D particle filter.
  * Created on: Dec 12, 2016
  * Author : Tiffany Huang
- * Modified: member function added by Subir Das / Jan 12 2020
+ * Modified: member function added by Subir Das / Jan 7 2020
  */
 
 #include "particle_filter.h"

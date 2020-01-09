@@ -26,6 +26,7 @@ struct Particle {
 
 
 class ParticleFilter {
+  
  private:
   // Number of particles to draw
   int num_particles; 
@@ -34,8 +35,8 @@ class ParticleFilter {
   bool is_initialized;
   
   // Vector of weights of all particles
-  //std::vector<double> weights; 
-
+  //std::vector<double> weights;
+  
  public:
   // Constructor
   // @param num_particles Number of particles
@@ -90,7 +91,7 @@ class ParticleFilter {
 //   void updateWeights(double sensor_range, double std_landmark[], 
 //                      const std::vector<LandmarkObs> &observations,
 //                      const Map &map_landmarks);
-  void updateWeights(double sensor_range, double std_landmark[], 
+   void updateWeights(double sensor_range, double std_landmark[], 
                      const std::vector<Observation> &observations,
                      const Map &map_landmarks);
   
@@ -124,7 +125,7 @@ class ParticleFilter {
   std::string getSenseCoord(Particle best, std::string coord);
 
   // Set of current particles
-  std::vector<Particle> particles;
+  std::vector<Particle> particles; 
 };
 
 #endif  // PARTICLE_FILTER_H_

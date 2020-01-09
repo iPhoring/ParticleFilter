@@ -39,7 +39,7 @@ struct ground_truth {
 };
 
 /**
- * Struct representing one landmark observation measurement.
+ * Struct representing one landmark observation with matching measurements.
  * added sd
  */
 struct Observation {

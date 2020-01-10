@@ -80,7 +80,7 @@ major implementation steps.
 2. Particle::Prediction - After particle initialization a particle prediction steps was added. The main idea is to predict the particle x,y and theata based on car motion using set of equations.
 
 The Particle Filter is implemented in src/particle_filter.cpp:
-Initialization: Particle initialization is implemented at ParticleFilter::init .
+Initialization: Particle initialization is implemented at ParticleFilter::init.
 Prediction: The prediction step is implemented at ParticleFilter::prediction.
 Update Weights:The particles final weight was calculated as the product of each measurement's Multivariate-Gaussian probability density using the below equation. Note: x and y are the observations in map coordinates. μx and μy are the coordinates of the nearest landmarks. Standard deviation for x and y
-Particle::resample: This was impletemented using a wheel approach as design by Dr. Sebastian Thrun.  The logic is to represents all our particles and importance weight in a big wheel. Each particle occupies a pie equal to this importance/weight.Particle with large weight will occupy large pie of the circle and vise versa. To start we guess a particle index uniformly for the set.
+Particle::resample: This was impletemented using a wheel approach as design by Dr. Sebastian Thrun.  The logic is to represents all our particles and importance weight in a big wheel. Each particle occupies a pie equal to this importance/weight.Particle with large weight will occupy large pie of the circle and vise versa. To start we guess a particle index uniformly from the index set. we then construct a function to find the best index i.e. each particle picked is in proportion to the total circumference.

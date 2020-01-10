@@ -68,3 +68,12 @@ You can find the inputs to the particle filter in the `data` directory.
 
 ### All other data the simulator provides, such as observations and controls.
 > * Map data provided by 3D Mapping Solutions GmbH.
+
+# Project Output
+Particle filter was implemented in C++ and executed in Udacity's simulator, which is an enclosed environment for running autonomous cars. The environment simulates road conditions, sensor data, feedback amd other mechanism for testing and runing various components of self driving. Kidnapped Vehicle simulation was used for particle filter testing.
+
+# Code description
+The Particle Filter is implemented in src/particle_filter.cpp:
+Initialization: Particle initialization is implemented at ParticleFilter::init .
+Prediction: The prediction step is implemented at ParticleFilter::prediction .
+Update Weights:

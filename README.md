@@ -84,6 +84,9 @@ Major implementation steps:
 ![image3](./images/yawZero.png)
 
 3. Particle::dataAssociation:
+![image5](./images/ParticleFilter.png)
+![image6](./images/MultivariateGaussian.png)
+![image7](./images/transformation.png)
 
 3. Particle::updateWeights - The particles final weight was calculated as the product of each measurement's Multivariate-Gaussian probability density using the below equation. Note: x and y are the observations in map coordinates. μx and μy are the coordinates of the nearest landmarks. Standard deviation for x and y
 

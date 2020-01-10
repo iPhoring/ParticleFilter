@@ -74,13 +74,18 @@ Particle filter was implemented in C++ and executed in Udacity's simulator, whic
 
 # Filter Design and Implementation
 Filter design is depicted below. 
+![image1](./images/design.png)
 
-major implementation steps.
+Major implementation steps:
 1. Particle::Init- A noisy measurement from GPS was used to initialize all particles. After initialization Gaussian noise is added with standard deviation same as GPS data. The number of particle was choosen based examples present in the class notes and further imperically validated.
-2. Particle::Prediction - After particle initialization a particle prediction steps was added. The main idea is to predict the particle x,y and theata based on car motion using set of equations.
 
-The Particle Filter is implemented in src/particle_filter.cpp:
-Initialization: Particle initialization is implemented at ParticleFilter::init.
-Prediction: The prediction step is implemented at ParticleFilter::prediction.
-Update Weights:The particles final weight was calculated as the product of each measurement's Multivariate-Gaussian probability density using the below equation. Note: x and y are the observations in map coordinates. μx and μy are the coordinates of the nearest landmarks. Standard deviation for x and y
+2. Particle::Prediction - After particle initialization a particle prediction steps was added. The main idea is to predict the particle x,y and theata based on car motion using set of equations.
+![image2](./images/yawNotZero.png)
+![image3](./images/yawZero.png)
+
+3. Particle::dataAssociation:
+
+3. Particle::updateWeights - The particles final weight was calculated as the product of each measurement's Multivariate-Gaussian probability density using the below equation. Note: x and y are the observations in map coordinates. μx and μy are the coordinates of the nearest landmarks. Standard deviation for x and y
+
 Particle::resample: This was impletemented using a wheel approach as design by Dr. Sebastian Thrun.  The logic is to represents all our particles and importance weight in a big wheel. Each particle occupies a pie equal to this importance/weight.Particle with large weight will occupy large pie of the circle and vise versa. To start we guess a particle index uniformly from the index set. we then construct a function to find the best index i.e. each particle picked is in proportion to the total circumference.
+![image4](./images/resampleWheel.png)

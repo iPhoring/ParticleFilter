@@ -22,12 +22,8 @@ root
 |   CMakeLists.txt
 |   README.md
 |   run.sh
-|
-|___data
-|   |   
-|   |   map_data.txt
-|   
-|   
+|___data   
+|   |   map_data.txt   
 |___src
     |   helper_functions.h
     |   main.cpp
@@ -45,19 +41,26 @@ You can find the inputs to the particle filter in the `data` directory.
 #### All other data the simulator provides, such as observations and controls.
 > * Map data provided by 3D Mapping Solutions GmbH.
 
-### 1. Particle::Init- A noisy measurement from GPS was used to initialize all particles. After initialization Gaussian noise is added with standard deviation same as GPS data. The number of particle was choosen based examples present in the class notes and further imperically validated.
+### 1. Particle::Init
+A noisy measurement from GPS was used to initialize all particles. After initialization Gaussian noise is added with standard deviation same as GPS data. The number of particle was choosen based examples present in the class notes and further imperically validated.
 
-### 2. Particle::Prediction - After particle initialization a particle prediction steps was added. The main idea is to predict the particle x,y and theata based on car motion using set of equations.
+### 2. Particle::Prediction
+After particle initialization a particle prediction steps was added. The main idea is to predict the particle x,y and theata based on car motion using set of equations.
 ![image3](./images/yawNotZero.png)
 ![image4](./images/yawZero.png)
 
-### 3. Particle::dataAssociation: 
+### 3. Particle::dataAssociation:
+The main idea is to find the predicted measurement that is closest to each observed measurement and assign the observed measurement to that particular landmark.
+
+Before finding the distance we need to transform the observations which are in the VEHICLE'S coordinate system to particles coordinate system. Particle are located according to the MAP'S coordinate system. This tranformation is doen using the below mentioned equation with an assumption that we we ar doing homgenous transformation.
 ![image6](./images/transformation.png)
 
-### 3. Particle::updateWeights - The particles final weight was calculated as the product of each measurement's Multivariate-Gaussian probability density using the below equation. Note: x and y are the observations in map coordinates. μx and μy are the coordinates of the nearest landmarks. Standard deviation for x and y
+### 3. Particle::updateWeights
+The particles final weight was calculated as the product of each measurement's Multivariate-Gaussian probability density using the below equation. Note: x and y are the observations in map coordinates. μx and μy are the coordinates of the nearest landmarks. Standard deviation for x and y
 ![image5](./images/MultivariateGaussian.png)
 
-### 4. Particle::resample: This was impletemented using a wheel approach as design by Dr. Sebastian Thrun.  The logic is to represents all our particles and importance weight in a big wheel. Each particle occupies a pie equal to this importance/weight.Particle with large weight will occupy large pie of the circle and vise versa. To start we guess a particle index uniformly from the index set. we then construct a function to find the best index i.e. each particle picked is in proportion to the total circumference.
+### 4. Particle::resample:
+This was impletemented using a wheel approach as design by Dr. Sebastian Thrun.  The logic is to represents all our particles and importance weight in a big wheel. Each particle occupies a pie equal to this importance/weight.Particle with large weight will occupy large pie of the circle and vise versa. To start we guess a particle index uniformly from the index set. we then construct a function to find the best index i.e. each particle picked is in proportion to the total circumference.
 ![image7](./images/resampleWheel.png)
 
 ## Running the Code

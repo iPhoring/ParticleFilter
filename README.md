@@ -61,7 +61,7 @@ The particles' final weight was calculated as the product of each measurement's 
 ![image5](./images/MultivariateGaussian.png)
 
 ### 4. Particle::resample:
-This was impletemented using a wheel approach as design by Dr. Sebastian Thrun, Udacity.  The logic is to represent all particles and importance/weight in a big wheel(circle). Each particle occupies a pie equal to its importance/weight. Particle with large weight will occupy larger pie of the circle and vice versa. To start, a particle index was generated form the uniformly distributed index set of the particles. A function was constructed to find the best index i.e. each particle picked is in proportion to the total circumference. 
+This was impletemented using a wheel approach as design by Dr. Sebastian Thrun, Udacity.  The logic is to represent all particles and importance/weight in a big wheel(circle). Each particle occupies a pie equal to its importance/weight. Particle with large weight will occupy larger pie of the circle and vice versa. To start, a particle index was generated from the uniformly distributed index set of particles. A function was constructed to find the best index i.e. each particle picked is in proportion to the total circumference. 
 ![image7](./images/resampleWheel.png)
 
 ## Running the Code

@@ -52,7 +52,7 @@ After particle initialization a particle prediction steps was added. The main id
 ### 3. Particle::dataAssociation:
 The main idea is to find the predicted measurement that is closest to each observed measurement and assign the observed measurement to that particular landmark.
 
-Before finding the distance we need to transform the observations which are in the VEHICLE'S coordinate system to particles coordinate system. Particle are located according to the MAP'S coordinate system. This tranformation is doen using the below mentioned equation with an assumption that we we ar doing homgenous transformation.
+Before finding the distance we need to transform the observations which are in the VEHICLE'S coordinate system to particles coordinate system. Particle are located according to the MAP'S coordinate system. This tranformation is doen using the below mentioned equation with an assumption that we we ar doing homogenous transformation.
 ![image6](./images/transformation.png)
 
 ### 3. Particle::updateWeights

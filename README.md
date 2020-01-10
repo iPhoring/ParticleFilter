@@ -43,17 +43,17 @@ You can find the inputs to the particle filter in the `data` directory.
 > * Map data provided by 3D Mapping Solutions GmbH.
 
 ### 1. Particle::Init
-A noisy measurement from GPS was used to initialize all particles. After initialization Gaussian noise is added with standard deviation same as GPS data. The number of particle was choosen based examples present in the class notes and further imperically validated.
+A noisy measurement from GPS was used to initialize all particles. After initialization Gaussian noise is added with standard deviation same as GPS data. The number of particles was chosen based on the examples mentioned in class notes and further imperically validated.
 
 ### 2. Particle::Prediction
-After particle initialization a particle prediction steps was added. The main idea is to predict the particle x,y and theata based on car motion using set of equations.
+After particle initialization, the prediction step was added. The main idea is to predict the particle's x,y and theta based on car's motion using a set of equations as depicted below.
 ![image3](./images/yawNotZero.png)
 ![image4](./images/yawZero.png)
 
 ### 3. Particle::dataAssociation:
 The main idea is to find the predicted measurement that is closest to each observed measurement and assign the observed measurement to that particular landmark.
 
-Before finding the distance we need to transform the observations which are in the VEHICLE'S coordinate system to particles coordinate system. Particle are located according to the MAP'S coordinate system. This tranformation is doen using the below mentioned equation with an assumption that we we ar doing homogenous transformation.
+Before finding the smallest distance, observations which are in the VEHICLE'S coordinate system are transfromed to particles coordinate system. Particles are located according to the MAP'S coordinate system. This tranformation is done using the below mentioned equation with an assumption that we are doing homogenous transformation.
 ![image6](./images/transformation.png)
 
 ### 3. Particle::updateWeights

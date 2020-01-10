@@ -2,14 +2,13 @@
 [![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
 
 # Objective: Localization 
-Self driving car moved to an alien world with limited and noisy data. Car will not be able to use any of its past beleives thus itneeds to reestablize all beelives using a particle filter. The alien world has a map, a noisy GPS with erronous sensor and control data. This project will implement a two dimensional particle filter in C++ to localize the car for autonomous driving. The particle filter will have access to the map, noisy initial localization information from GPS and noisy observation and control data.
+Self driving car moved to an alien world with limited and noisy data. The alien world has a map, a noisy GPS with erronous sensor and control data. This project will implement a two dimensional particle filter in C++ to localize the car for autonomous driving. The particle filter will have access to the map, noisy initial localization information from GPS and noisy observation and control data from the sensors.
 
 # Project Output
-Particle filter was implemented in C++ and executed in Udacity's simulator, which is an enclosed environment for running autonomous cars. The environment simulates road conditions, sensor data, feedback amd other mechanism for testing and runing various components of self driving. Kidnapped Vehicle simulation was used for particle filter testing.
+Particle filter was implemented in C++ and executed in Udacity's simulator, which is an enclosed environment for running autonomous cars. The environment simulates road conditions, sensor data, feedback and other mechanisms for testing and running various components of self driving. Kidnapped Vehicle simulation was used for building and testing the particle filter. 
 ![image1](./images/ParticleFilter.png)
 ### Final Video
 [Particle Filter](https://www.youtube.com/watch?v=myd3ctSHtts)
-
 
 # Filter Design and Implementation
 ## Filter design is depicted below. 
